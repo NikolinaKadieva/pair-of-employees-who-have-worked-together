@@ -1,5 +1,6 @@
 export function parseCSV (csvData) {
     const csvDataNoIntervals = csvData.replace(/\s/g, '');
+    const currentDate = new Date();
     let [start, ...csvDataSplit] = csvDataNoIntervals.split('""').filter(Boolean);
     let end = csvDataSplit.pop();
     start = start.replace(/"/g, '');
@@ -14,8 +15,8 @@ export function parseCSV (csvData) {
         return {
             EmpID: parseInt(id),
             ProjectID: parseInt(project),
-            DateFrom: dateFrom === "NULL" ? null : dateFrom,
-            DateTo: dateTo === "NULL" ? null : dateTo,
+            DateFrom: dateFrom === "NULL" ? currentDate : dateFrom,
+            DateTo: dateTo === "NULL" ? currentDate : dateTo,
         };
     });
 
