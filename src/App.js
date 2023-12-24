@@ -9,9 +9,7 @@ function App() {
     
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        const fileName = file.name;
-        const label = document.querySelector("label[for=files]");
-        label.innerText = fileName ?? "Browse Files";
+        
         if (file) {
             const reader = new FileReader();
 
