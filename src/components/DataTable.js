@@ -4,6 +4,7 @@ function DataTable() {
     const location = useLocation();
     const projects = location.state['data'];
     const projectsForTable = [];
+    
     projects.map((row) => {
         for (let el of row.projectsList) {
             projectsForTable.push(el);

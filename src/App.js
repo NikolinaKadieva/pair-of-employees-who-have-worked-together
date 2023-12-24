@@ -36,6 +36,7 @@ function App() {
 
             employeeProjects[projectID].push(project);
         });
+
         let longestPairs = [];
 
         Object.values(employeeProjects).map((projectsList) => {
@@ -57,7 +58,7 @@ function App() {
                                     (obj) =>
                                         obj['employees'] &&
                                         JSON.stringify(obj['employees']) ===
-                                            JSON.stringify(pair1.employees)
+                                        JSON.stringify(pair1.employees)
                                 );
                                 if (objectWithKeyValue) {
                                     const pairIndex = longestPairs.findIndex(
@@ -97,8 +98,9 @@ function App() {
         const sortedPairs = longestPairs
             .slice()
             .sort((a, b) => b.duration - a.duration);
-        const maxDuration =
-            sortedPairs.length > 0 ? sortedPairs[0].duration : 0;
+
+        const maxDuration = sortedPairs.length > 0 ? sortedPairs[0].duration : 0;
+
         let filteredPairs = sortedPairs.filter(
             (item) => item.duration === maxDuration
         );
@@ -137,11 +139,13 @@ function App() {
                     }
                 })
                 .filter(Boolean);
+
             return {
                 ...item,
                 projectsList: updatedProjectsList,
             };
         });
+
         return resultArray;
     };
 
