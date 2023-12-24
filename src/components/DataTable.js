@@ -1,21 +1,14 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 function DataTable() {
     const location = useLocation();
-    const projects = location.state["data"];
-    console.log(projects);
+    const projects = location.state['data'];
+    const projectsForTable = [];
     projects.map((row) => {
-        for (let curr of row.projectsList) {
-          console.log(curr.project, curr.duration);
+        for (let el of row.projectsList) {
+            projectsForTable.push(el);
         }
-    })
-
-    projects.map((row) => {
-        row.projectsList.map((curr) => {
-           console.log(curr.duration, curr.project);
-        })
-    })
-
+    });
 
     return (
         <>
@@ -35,7 +28,7 @@ function DataTable() {
                                 <td>{row.employees[1]}</td>
                                 <td>{row.duration}</td>
                             </tr>
-                        )
+                        );
                     })}
                 </tbody>
             </table>
@@ -48,22 +41,18 @@ function DataTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        projects.map((row) => {
-                          for (const element of row.projectsList) {
-                            return (
-                                <tr>
-                                    <td>{element.project}</td>
-                                    <td>{element.duration}</td>
-                                </tr>
-                            )
-                          }
-                        })
-                    }
+                    {projectsForTable.map((el) => {
+                        return (
+                            <tr key={el.project}>
+                                <td>{el.project}</td>
+                                <td>{el.duration}</td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </>
-    )
+    );
 }
 
 export default DataTable;
