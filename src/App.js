@@ -142,8 +142,7 @@ console.log(projects);
             <div className="nav-div">
                 <nav>
                     <NavLink to={"/"}>Home</NavLink>
-                    <NavLink to={"/pairs-of-employees"} onClick={findLongestWorkingPairs} state={{ data: projects }}>User Tickets</NavLink>
-                    {/* <NavLink to={"/profile"}>Profile</NavLink> */}
+                    <NavLink to={"/pairs-of-employees"} onClick={findLongestWorkingPairs} state={{ data: projects }}>Pairs of employees</NavLink>
                 </nav>
             </div>
             <div className="content-div">

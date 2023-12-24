@@ -3,8 +3,8 @@ export function findCommonProjects (emp1, emp2) {
 
     const emp1DateFrom = new Date(emp1.DateFrom);
     const emp2DateFrom = new Date(emp2.DateFrom);
-    let emp1DateTo = emp1.DateTo === null ? new Date() : new Date(emp1.DateTo);
-    let emp2DateTo = emp2.DateTo === null ? new Date() : new Date(emp2.DateTo);
+    let emp1DateTo = emp1.DateTo === "NULL" ? new Date() : new Date(emp1.DateTo);
+    let emp2DateTo = emp2.DateTo === "NULL" ? new Date() : new Date(emp2.DateTo);
     emp1DateTo.setDate(emp1DateTo.getDate() + 1);
     emp2DateTo.setDate(emp2DateTo.getDate() + 1);
 
