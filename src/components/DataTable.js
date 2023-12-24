@@ -42,11 +42,11 @@ function DataTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {projectsForTable.map((el) => {
+                    {projectsForTable.map((curr) => {
                         return (
-                            <tr key={el.project}>
-                                <td>{el.project}</td>
-                                <td>{el.duration}</td>
+                            <tr key={curr.project}>
+                                <td>{curr.project}</td>
+                                <td>{curr.duration}</td>
                             </tr>
                         );
                     })}

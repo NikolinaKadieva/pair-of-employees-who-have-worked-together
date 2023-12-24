@@ -26,6 +26,7 @@ function App() {
     const findLongestWorkingPairs = (projects) => {
         const employeeProjects = {};
         const processedPairs = new Set();
+        let longestPairs = [];
 
         projects.map((project) => {
             const projectID = project.ProjectID;
@@ -36,8 +37,6 @@ function App() {
 
             employeeProjects[projectID].push(project);
         });
-
-        let longestPairs = [];
 
         Object.values(employeeProjects).map((projectsList) => {
             projectsList.map((empObj1) => {
@@ -170,13 +169,13 @@ function App() {
             <h1>Longest Working Pairs</h1>
             <div className="input-container">
                 <label htmlFor="files" className="btn">
-                    Browse Files
+                    Browse File
                 </label>
                 <input
                     type="file"
                     id="files"
                     style={{ display: 'none' }}
-                    onChange={handleFileChange}
+                    onChange={ handleFileChange }
                 />
             </div>
         </div>
